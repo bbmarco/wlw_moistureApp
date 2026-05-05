@@ -8,6 +8,9 @@
 const serverUrl = "http://localhost:8000";
 
 const addPlant = (name, border, water, interval) => {
+    /* Absatz erstellen */
+    const absatz = document.createElement('br')
+
 
     /* neue Pflanze erstellen */
     const neuePflanze = document.createElement('div');
@@ -40,6 +43,7 @@ const addPlant = (name, border, water, interval) => {
     plantMoisture.appendChild(pMoist);
 
     plantInfo.appendChild(plantMoisture);
+    plantInfo.appendChild(absatz);
 
     /* Grenzwert hinzufügen */
     const plantBorder = document.createElement('div');
@@ -52,6 +56,7 @@ const addPlant = (name, border, water, interval) => {
     plantBorder.appendChild(pBorder);
 
     plantInfo.appendChild(plantBorder);
+    plantInfo.appendChild(absatz);
 
     /* Wassermenge hinzufügen */
     const plantWater = document.createElement('div');
@@ -64,6 +69,7 @@ const addPlant = (name, border, water, interval) => {
     plantWater.appendChild(pWater);
 
     plantInfo.appendChild(plantWater);
+    plantInfo.appendChild(absatz);
 
     /* Grenzwert hinzufügen */
     const plantInterval = document.createElement('div');
@@ -76,9 +82,9 @@ const addPlant = (name, border, water, interval) => {
     plantInterval.appendChild(pInterval);
 
     plantInfo.appendChild(plantInterval);
+    plantInfo.appendChild(absatz);
 
     /* alle an newplant hängen */
-
     neuePflanze.appendChild(header);
     neuePflanze.appendChild(plantInfo);
 

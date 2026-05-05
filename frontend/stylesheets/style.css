@@ -154,7 +154,8 @@ a {
 
 :root {
     /*Farben*/
-    --color-primary: rgb(0, 180, 36);
+/*     --color-primary: rgb(201 201 201); */ 
+    --color-primary: rgb(0 180 36);
     --color-secondary: rgb(18, 82, 0);
     --color-bg-light: rgb(255, 238, 238);
 
