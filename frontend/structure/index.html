@@ -21,36 +21,35 @@
 
 <body>
     <div class="logo-container">
-        <a href="index.html">
-            <img src="../images/TMSS.png" alt="Logo" />
+        <a href="index.html" style="text-decoration: none">
+            <img src="../images/TMSSRotate2.gif" alt="Logo" />
             <!-- alt steht für alternativer Text und ist sehr wichtig für:
             Barrierefreiheit, als Fallback und Suchmaschinenoptimierung -->
         </a>
     </div>
     <div class="site">
         <header>
-            <h1>
-                <a href="index.html">The Moist Soil Society</a>
+            <h1 id="site-header">
+                <a href="index.html" style="color: inherit"> |--> The Moist Soil Society <--| </a>
             </h1>
-           <!--  <hr />
+            <br />
             <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">Über diese Projektarbeit</a>
-            </nav> -->
+                <a href="index.html" style="color: inherit">|Home|</a>
+                <a href="about.html" style="color: inherit">|Über|</a>
+                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+            </nav>
         </header>
 
         <main>
+            <header class="section-header">
+                <h3>Einführung</h3>
+            </header>
             <section class="top-bubble">
-                <a href="about.html">
-                    <header class="section-header">
-                        <h3>Einführung</h3>
-                    </header>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                        sit amet.
-                    </p>
-                </a>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.
+                </p>
             </section>
 
             <header class="section-header">
@@ -139,8 +138,11 @@
                 <p>Giess-Intervall:</p>
                 <input type="text" id="plant-interval" />
                 <br />
-                <br />
 
+                <p>Pflanzenbild auswählen:</p>
+                <input type="file" id="plant-image" accept="image/*" />
+                <br />
+                
                 <button id="btn">Neuer Eintrag</button>
             </section>
 
@@ -149,11 +151,12 @@
 
         <footer>
             <small>&copy; The Moist Soil Society</small>
-            <!-- <br />
+            <img src="../images/waschbär-removebg-preview.png" alt="Waschbär" />
             <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">Über diese Projektarbeit</a>
-            </nav> -->
+                <a href="index.html" style="color: inherit">|Home|</a>
+                <a href="about.html" style="color: inherit">|Über|</a>
+                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+            </nav>
         </footer>
     </div>
 </body>
