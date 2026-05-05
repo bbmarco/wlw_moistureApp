@@ -1,0 +1,301 @@
+/* ==================================================================================================== 
+    Author:   Basil Dick
+    Project:  wlw-Projektarbeit Frühlingssemester 2026
+    File:     style.css
+    Purpose:  Styling for the client interface
+====================================================================================================*/
+
+/* ====================================================================================================
+    1. Meyer Reset
+
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+====================================================================================================*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ====================================================================================================
+    2. Variablen
+====================================================================================================*/
+
+:root {
+    /*Farben*/
+    --color-primary: rgb(0, 180, 36);
+    --color-secondary: rgb(18, 82, 0);
+    --color-bg-light: rgb(255, 238, 238);
+
+    /*Abstände & Radien*/
+    --radius-main: 10px;
+    --spacing-sm: 5px;
+    --spacing-md: 10px;
+    --spacing-lg: 20px;
+
+}
+
+/* ====================================================================================================
+    3. Layout
+====================================================================================================*/
+
+body {
+    margin: 0;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+}
+
+.site {
+    margin: var(--spacing-md);
+    width: 70%;
+    flex: 1;
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-main);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.site header{
+    text-decoration: underline;
+}
+
+.site header h1 {
+    font-size: 50px;
+}
+
+header,
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ====================================================================================================
+    4. Komponenten
+====================================================================================================*/
+
+/* Logo */
+.logo-container {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    width: 13%;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    display: block;
+}
+
+/* Bubbles & Header */
+
+.section-header {
+    color: var(--color-bg-light);
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-main);
+    margin: var(--spacing-sm);
+    padding: var(--spacing-md);
+}
+
+.top-bubble {
+    color: var(--color-bg-light);
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-main);
+    cursor: pointer;
+    margin: var(--spacing-sm);
+    padding-bottom: var(--spacing-md);
+}
+
+.top-bubble p {
+    color: var(--color-bg-light);
+}
+
+#plant-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.plant-item {
+    background-color: var(--color-secondary);
+    color: var(--color-bg-light);
+    border-radius: var(--radius-main);
+    margin: var(--spacing-sm);
+    padding-bottom: var(--spacing-md);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    max-width: 300px;
+    flex: 1 1 250px;
+}
+
+.plant-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.plant-info {
+    flex: 1;
+}
+
+.plant-picture {
+    width: 120px;
+    height: auto;
+    border-radius: var(--radius-main);
+
+}
+
+.newPlant {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-secondary);
+    color: var(--color-bg-light);
+    border-radius: var(--radius-main);
+    margin: var(--spacing-sm);
+    padding: var(--spacing-md);
+
+}

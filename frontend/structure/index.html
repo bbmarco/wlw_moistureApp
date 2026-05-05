@@ -1,0 +1,161 @@
+<!--
+    Author:  Basil Dick
+    Project: wlw-Projektarbeit Frühlingssemester 2026
+    Date:    2026-05-05
+    Version: 1.0.0
+-->
+
+<!DOCTYPE html>
+§<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Basil Dick">
+    <meta name="description" content="wlw-Projektarbeit Frühlingssemester 2026">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Moist Soil Society</title>
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <link rel="icon" type="image/png" href="../images/TMSS.png" />
+    <script src="../main.js"></script>
+</head>
+
+<body>
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="../images/TMSS.png" alt="Logo" />
+            <!-- alt steht für alternativer Text und ist sehr wichtig für:
+            Barrierefreiheit, als Fallback und Suchmaschinenoptimierung -->
+        </a>
+    </div>
+    <div class="site">
+        <header>
+            <h1>
+                <a href="index.html">The Moist Soil Society</a>
+            </h1>
+           <!--  <hr />
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">Über diese Projektarbeit</a>
+            </nav> -->
+        </header>
+
+        <main>
+            <section class="top-bubble">
+                <a href="about.html">
+                    <header class="section-header">
+                        <h3>Einführung</h3>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                        sit amet.
+                    </p>
+                </a>
+            </section>
+
+            <header class="section-header">
+                <h3>Planzenübersicht:</h3>
+            </header>
+
+            <section id="plant-container">
+                <div class="plant-item">
+                    <header class="section-header">
+                        <h4>Pflanze 1</h4>
+                    </header>
+                    <div class="plant-content">
+                        <div class="plant-info">
+                            <div class="plant-moist">
+                                <h5>Feuchtigkeit:</h5>
+                                <p>53%</p>
+                            </div>
+                            <br />
+                            <div class="plant-border">
+                                <h5>Grenzwert:</h5>
+                                <p>20%</p>
+                            </div>
+                            <br />
+                            <div class="plant-water">
+                                <h5>Giessmenge:</h5>
+                                <p>500ml</p>
+                            </div>
+                            <br />
+                            <div class="plant-interval">
+                                <h5>Intervall:</h5>
+                                <p>5T</p>
+                            </div>
+                        </div>
+                        <img src="../images/pflanze1.png" alt="Abbildung Pflanze1" class="plant-picture" />
+                    </div>
+                </div>
+
+                <div class="plant-item">
+                    <header class="section-header">
+                        <h4>Pflanze 2</h4>
+                    </header>
+                    <div class="plant-content">
+                        <div class="plant-info">
+                            <div class="plant-moist">
+                                <h5>Feuchtigkeit:</h5>
+                                <p>40%</p>
+                            </div>
+                            <br />
+                            <div class="plant-border">
+                                <h5>Grenzwert:</h5>
+                                <p>30%</p>
+                            </div>
+                            <br />
+                            <div class="plant-water">
+                                <h5>Giessmenge:</h5>
+                                <p>200ml</p>
+                            </div>
+                            <br />
+                            <div class="plant-interval">
+                                <h5>Intervall:</h5>
+                                <p>3T</p>
+                            </div>
+                        </div>
+                        <img src="../images/pflanze2.png" alt="Abbildung pflanze2" class="plant-picture" />
+                    </div>
+                </div>
+            </section>
+
+            <header class="section-header">
+                <h3>Neuer Eintrag Erstellen:</h3>
+            </header>
+
+            <section class="newPlant">
+                <p>Pflanzenname</p>
+                <input type="text" id="plant-name" />
+                <hr />
+
+                <p>Feuchtigkeits-Grenzwert:</p>
+                <input type="text" id="plant-border" />
+                <hr />
+
+                <p>Giessmenge:</p>
+                <input type="text" id="plant-water" />
+                <hr />
+
+                <p>Giess-Intervall:</p>
+                <input type="text" id="plant-interval" />
+                <hr />
+                <hr />
+
+                <button id="btn">Neuer Eintrag</button>
+            </section>
+
+        </main>
+
+
+        <footer>
+            <small>&copy; The Moist Soil Society</small>
+            <!-- <br />
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">Über diese Projektarbeit</a>
+            </nav> -->
+        </footer>
+    </div>
+</body>
+
+</html>
