@@ -16,15 +16,13 @@
     <title>The Moist Soil Society</title>
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link rel="icon" type="image/png" href="../images/TMSS.png" />
-    <script src="../main.js"></script>
+    <script type="module" src="../function/main.js"></script>
 </head>
 
 <body>
     <div class="logo-container">
         <a href="index.html" style="text-decoration: none">
             <img src="../images/TMSSRotate2.gif" alt="Logo" />
-            <!-- alt steht für alternativer Text und ist sehr wichtig für:
-            Barrierefreiheit, als Fallback und Suchmaschinenoptimierung -->
         </a>
     </div>
     <div class="site">
@@ -83,7 +81,9 @@
                                 <p>5T</p>
                             </div>
                         </div>
-                        <img src="../images/pflanze1.png" alt="Abbildung Pflanze1" class="plant-picture" />
+                        <figure class="plant-picture">
+                            <img src="../images/pflanze1.png" alt="Abbildung Pflanze1" />
+                        </figure>
                     </div>
                 </div>
 
@@ -113,7 +113,9 @@
                                 <p>3T</p>
                             </div>
                         </div>
-                        <img src="../images/pflanze2.png" alt="Abbildung pflanze2" class="plant-picture" />
+                        <figure class="plant-picture">
+                            <img src="../images/pflanze2.png" alt="Abbildung pflanze2" />
+                        </figure>
                     </div>
                 </div>
             </section>
@@ -142,7 +144,7 @@
                 <p>Pflanzenbild auswählen:</p>
                 <input type="file" id="plant-image" accept="image/*" />
                 <br />
-                
+
                 <button id="btn">Neuer Eintrag</button>
             </section>
 
