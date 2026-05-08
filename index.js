@@ -7,6 +7,11 @@ const PORT = 3000;
 
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, 'frontend/structure')));
+app.use('/stylesheets', express.static(path.join(__dirname, 'frontend/stylesheets')));
+app.use('/images', express.static(path.join(__dirname, 'frontend/images')));
+app.use('/main.js', express.static(path.join(__dirname, 'frontend/main.js')));
+
 // Ordnerpfad für Sensordaten definieren
 const DATA_DIR = path.join(__dirname, 'sensor_data');
 
@@ -49,11 +54,6 @@ app.get('/get-data/:id', (req,res) => {
     }
 });
 
-app.use(express.static(path.join(__dirname, 'frontend/structure')));
-app.use('/stylesheets', express.static(path.join(__dirname, 'frontend/stylesheets')));
-app.use('/images', express.static(path.join(__dirname, 'frontend/images')));
-app.use('/main.js', express.static(path.join(__dirname, 'frontend/main.js')));
-
 app.listen(PORT, () => {
     console.log(`Server läuft. Erreichbar unter http://192.168.0.52:${PORT}`);
-})
+});
