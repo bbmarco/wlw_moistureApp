@@ -144,9 +144,6 @@ table {
     border-spacing: 0;
 }
 
-a {
-    text-decoration: none;
-}
 
 /* ====================================================================================================
     2. Variablen
@@ -154,9 +151,10 @@ a {
 
 :root {
     /*Farben*/
-    --color-primary: rgb(0, 180, 36);
-    --color-secondary: rgb(18, 82, 0);
-    --color-bg-light: rgb(255, 238, 238);
+    --color-primary: rgb(203 203 190);
+    --color-secondary: rgb(0 119 234);
+    --color-tertiary: rgb(0 1 73);
+    --color-bg-light: rgb(0 255 34);
 
     /*Abstände & Radien*/
     --radius-main: 10px;
@@ -184,15 +182,11 @@ body {
     margin: var(--spacing-md);
     width: 70%;
     flex: 1;
-    background-color: var(--color-bg-light);
+    background-color: var(--color-secondary);
     border-radius: var(--radius-main);
     display: flex;
     flex-direction: column;
 
-}
-
-.site header{
-    text-decoration: underline;
 }
 
 .site header h1 {
@@ -205,6 +199,21 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+header {
+    color: var(--color-bg-light);
+}
+
+footer {
+    margin: var(--spacing-sm);
+}
+
+footer img {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: var(--spacing-sm);
 }
 
 /* ====================================================================================================
@@ -228,11 +237,28 @@ footer {
     display: block;
 }
 
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Title */
+#site-header {
+    font-family: 'Arial Black', sans-serif;
+    text-shadow: var(--spacing-sm) var(--spacing-sm) #000;
+    letter-spacing: var(--spacing-sm);
+    text-transform: uppercase;
+    font-weight: bold;
+    animation: blink 0.5s step-start infinite;
+    margin: var(--spacing-md);
+}
+
 /* Bubbles & Header */
 
 .section-header {
     color: var(--color-bg-light);
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     border-radius: var(--radius-main);
     margin: var(--spacing-sm);
     padding: var(--spacing-md);
@@ -240,11 +266,10 @@ footer {
 
 .top-bubble {
     color: var(--color-bg-light);
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     border-radius: var(--radius-main);
-    cursor: pointer;
     margin: var(--spacing-sm);
-    padding-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
 }
 
 .top-bubble p {
@@ -254,17 +279,22 @@ footer {
 #plant-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .plant-item {
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     color: var(--color-bg-light);
     border-radius: var(--radius-main);
     margin: var(--spacing-sm);
     padding-bottom: var(--spacing-md);
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
+    justify-content: center;
+    align-items: baseline;
+    min-width: 250px;
     max-width: 300px;
+    height: 280px;
     flex: 1 1 250px;
 }
 
@@ -272,6 +302,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 230px;
 
 }
 
@@ -281,9 +312,16 @@ footer {
 
 .plant-picture {
     width: 120px;
-    height: auto;
+    height: 200px;
+    margin: 0;
+    overflow: hidden;
     border-radius: var(--radius-main);
+}
 
+.plant-picture img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
 }
 
 .newPlant {
@@ -292,7 +330,7 @@ footer {
     justify-content: center;
     align-items: center;
 
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     color: var(--color-bg-light);
     border-radius: var(--radius-main);
     margin: var(--spacing-sm);

@@ -6,7 +6,7 @@
 -->
 
 <!DOCTYPE html>
-§<html lang="de">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -16,41 +16,38 @@
     <title>The Moist Soil Society</title>
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link rel="icon" type="image/png" href="../images/TMSS.png" />
-    <script src="../main.js"></script>
+    <script type="module" src="../function/main.js"></script>
 </head>
 
 <body>
     <div class="logo-container">
-        <a href="index.html">
-            <img src="../images/TMSS.png" alt="Logo" />
-            <!-- alt steht für alternativer Text und ist sehr wichtig für:
-            Barrierefreiheit, als Fallback und Suchmaschinenoptimierung -->
+        <a href="index.html" style="text-decoration: none">
+            <img src="../images/TMSSRotate2.gif" alt="Logo" />
         </a>
     </div>
     <div class="site">
         <header>
-            <h1>
-                <a href="index.html">The Moist Soil Society</a>
+            <h1 id="site-header">
+                <a href="index.html" style="color: inherit"> |--> The Moist Soil Society <--| </a>
             </h1>
-           <!--  <hr />
+            <br />
             <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">Über diese Projektarbeit</a>
-            </nav> -->
+                <a href="index.html" style="color: inherit">|Home|</a>
+                <a href="about.html" style="color: inherit">|Über|</a>
+                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+            </nav>
         </header>
 
         <main>
+            <header class="section-header">
+                <h3>Einführung</h3>
+            </header>
             <section class="top-bubble">
-                <a href="about.html">
-                    <header class="section-header">
-                        <h3>Einführung</h3>
-                    </header>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                        sit amet.
-                    </p>
-                </a>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
+                    sit amet.
+                </p>
             </section>
 
             <header class="section-header">
@@ -84,7 +81,9 @@
                                 <p>5T</p>
                             </div>
                         </div>
-                        <img src="../images/pflanze1.png" alt="Abbildung Pflanze1" class="plant-picture" />
+                        <figure class="plant-picture">
+                            <img src="../images/pflanze1.png" alt="Abbildung Pflanze1" />
+                        </figure>
                     </div>
                 </div>
 
@@ -114,7 +113,9 @@
                                 <p>3T</p>
                             </div>
                         </div>
-                        <img src="../images/pflanze2.png" alt="Abbildung pflanze2" class="plant-picture" />
+                        <figure class="plant-picture">
+                            <img src="../images/pflanze2.png" alt="Abbildung pflanze2" />
+                        </figure>
                     </div>
                 </div>
             </section>
@@ -126,20 +127,23 @@
             <section class="newPlant">
                 <p>Pflanzenname</p>
                 <input type="text" id="plant-name" />
-                <hr />
+                <br />
 
                 <p>Feuchtigkeits-Grenzwert:</p>
                 <input type="text" id="plant-border" />
-                <hr />
+                <br />
 
                 <p>Giessmenge:</p>
                 <input type="text" id="plant-water" />
-                <hr />
+                <br />
 
                 <p>Giess-Intervall:</p>
                 <input type="text" id="plant-interval" />
-                <hr />
-                <hr />
+                <br />
+
+                <p>Pflanzenbild auswählen:</p>
+                <input type="file" id="plant-image" accept="image/*" />
+                <br />
 
                 <button id="btn">Neuer Eintrag</button>
             </section>
@@ -149,11 +153,12 @@
 
         <footer>
             <small>&copy; The Moist Soil Society</small>
-            <!-- <br />
+            <img src="../images/waschbär-removebg-preview.png" alt="Waschbär" />
             <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">Über diese Projektarbeit</a>
-            </nav> -->
+                <a href="index.html" style="color: inherit">|Home|</a>
+                <a href="about.html" style="color: inherit">|Über|</a>
+                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+            </nav>
         </footer>
     </div>
 </body>
