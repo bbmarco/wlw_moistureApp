@@ -1,69 +1,95 @@
-<!--
-    Author:  Basil Dick
-    Project: wlw-Projektarbeit Frühlingssemester 2026
-    Date:    2026-05-05
-    Version: 1.0.0
--->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Basil Dick">
-    <meta name="description" content="wlw-Projektarbeit Frühlingssemester 2026">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Moist Soil Society</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Basil Dick" />
+    <meta
+      name="description"
+      content="wlw-Projektarbeit Frühlingssemester 2026"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Moist Soil Society - Anleitung</title>
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link rel="icon" type="image/png" href="../images/TMSS.png" />
     <script src="../main.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="logo-container">
-        <a href="index.html" style="text-decoration: none">
-            <img src="../images/TMSSRotate2.gif" alt="Logo" />
-            <!-- alt steht für alternativer Text und ist sehr wichtig für:
-            Barrierefreiheit, als Fallback und Suchmaschinenoptimierung -->
-        </a>
+      <a href="index.html" style="text-decoration: none">
+        <img
+          src="../images/TMSSRotate2.gif"
+          alt="The Moist Soil Society Logo"
+        />
+      </a>
     </div>
+
     <div class="site">
-        <header>
-            <h1 id="site-header">
-                <a href="index.html" style="color: inherit">|--> The Moist Soil Society <--|< /a>
-            </h1>
-            <br />
-            <nav>
-                <a href="index.html" style="color: inherit">|Home|</a>
-                <a href="about.html" style="color: inherit">|Über|</a>
-                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
-            </nav>
+      <header>
+        <h1 id="site-header">
+          <a href="index.html" style="color: inherit"
+            >|--> The Moist Soil Society <--|</a
+          >
+        </h1>
+        <br />
+        <nav>
+          <a href="index.html" style="color: inherit">|Home|</a>
+          <a href="about.html" style="color: inherit">|Über|</a>
+          <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+        </nav>
+      </header>
+
+      <main>
+        <header class="section-header">
+          <h3>Anleitung & Inbetriebnahme</h3>
         </header>
 
-        <main>
-            <header class="section-header">
-                <h3>Anleitung</h3>
-            </header>
-            <section class="top-bubble">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.
-                </p>
-            </section>
-        </main>
+        <section class="top-bubble">
+          <h4>Schritt 1: Sensor vorbereiten</h4>
+          <p style="margin-bottom: 15px">
+            Platziere den Feuchtigkeitssensor in der Erde deiner Pflanze. Stelle
+            sicher, dass die Hardware eingeschaltet ist und Daten an die
+            IP-Adresse deines Raspberry Pi sendet.
+          </p>
 
+          <h4>Schritt 2: Sensor-ID notieren</h4>
+          <p style="margin-bottom: 15px">
+            Jeder Sensor besitzt eine eindeutige ID (z.B.
+            <code>Yucca</code> oder <code>sensor_01</code>). Diese ID ist im
+            Programmcode des Sensors hinterlegt und muss exakt gleich
+            geschrieben werden.
+          </p>
 
-        <footer>
-            <small>&copy; The Moist Soil Society</small>
-            <img src="../images/waschbär-removebg-preview.png" alt="Waschbär" />
-            <nav>
-                <a href="index.html" style="color: inherit">|Home|</a>
-                <a href="about.html" style="color: inherit">|Über|</a>
-                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
-            </nav>
-        </footer>
+          <h4>Schritt 3: Pflanze im Dashboard registrieren</h4>
+          <p style="margin-bottom: 15px">
+            Gehe auf die Startseite ("Home") und scrolle nach unten zum
+            Formular. Trage den Namen der Pflanze, die exakte Sensor-ID sowie
+            deinen gewünschten kritischen Prozentwert ein. Lade optional ein
+            Foto hoch und klicke auf "Neuer Eintrag".
+          </p>
+
+          <h4>Schritt 4: Überwachung & Alarmierung</h4>
+          <p>
+            Das System aktualisiert die Werte vollautomatisch im Hintergrund.
+            Sobald die Erde zu trocken wird und den Grenzwert unterschreitet,
+            färbt sich die Karte auffällig rot – das ist dein Zeichen zum
+            Giessen!
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <small>&copy; The Moist Soil Society</small>
+        <img
+          src="../images/waschbär-removebg-preview.png"
+          alt="Waschbär Maskottchen"
+        />
+        <nav>
+          <a href="index.html" style="color: inherit">|Home|</a>
+          <a href="about.html" style="color: inherit">|Über|</a>
+          <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+        </nav>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
