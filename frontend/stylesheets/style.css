@@ -1,16 +1,15 @@
-/* ==================================================================================================== 
-    Author:   Basil Dick
-    Project:  wlw-Projektarbeit Frühlingssemester 2026
-    File:     style.css
-    Purpose:  Styling for the client interface
-====================================================================================================*/
+/**
+ * @file      style.css
+ * @author    Basil Dick
+ * @project   wlw-Projektarbeit Frühlingssemester 2026
+ * @brief     Globales Stylesheet für das Pflanzen-Echtzeit-Dashboard. Regelt das 
+ * responsive Layout und die visuelle Ästhetik im 90s-Retro-Look.
+ */
 
 /* ====================================================================================================
     1. Meyer Reset
-
-    http://meyerweb.com/eric/tools/css/reset/ 
-    v2.0 | 20110126
-    License: none (public domain)
+    Beseitigt standardisierte Browser-Abstände für eine konsistente Darstellung über alle Plattformen.
+    Reference: http://meyerweb.com/eric/tools/css/reset/ (v2.0 | 20110126)
 ====================================================================================================*/
 
 html,
@@ -94,15 +93,15 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
+/* HTML5 Display-Fallback für ältere Browserumgebungen */
 article,
 aside,
 details,
@@ -114,226 +113,352 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
-    content: none;
+  content: "";
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-
 /* ====================================================================================================
-    2. Variablen
+    2. Globale CSS-Variablen
+    Zentrale Steuerung des Farbschemas und der Layout-Dimensionen für verbesserte Wartbarkeit.
 ====================================================================================================*/
 
 :root {
-    /*Farben*/
-    --color-primary: rgb(203 203 190);
-    --color-secondary: rgb(0 119 234);
-    --color-tertiary: rgb(0 1 73);
-    --color-bg-light: rgb(0 255 34);
+  /* Retro-Farbelemente */
+  --color-primary: rgb(203 203 190);
+  --color-secondary: rgb(0 119 234);
+  --color-tertiary: rgb(0 1 73);
+  --color-bg-light: rgb(0 255 34);
 
-    /*Abstände & Radien*/
-    --radius-main: 10px;
-    --spacing-sm: 5px;
-    --spacing-md: 10px;
-    --spacing-lg: 20px;
-
+  /* Abstände & Radien */
+  --radius-main: 10px;
+  --spacing-sm: 5px;
+  --spacing-md: 10px;
+  --spacing-lg: 20px;
 }
 
 /* ====================================================================================================
-    3. Layout
+    3. Globales Layout
+    Definiert das flexible Flexbox-Grundgerüst der Webapplikation.
 ====================================================================================================*/
 
 body {
-    margin: 0;
-    background-color: var(--color-primary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    font-family: sans-serif;
+  margin: 0;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: sans-serif;
 }
 
+/* Haupt-Container der Applikation */
 .site {
-    margin: var(--spacing-md);
-    width: 70%;
-    flex: 1;
-    background-color: var(--color-secondary);
-    border-radius: var(--radius-main);
-    display: flex;
-    flex-direction: column;
-
+  margin: var(--spacing-md);
+  width: 70%;
+  flex: 1;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-main);
+  display: flex;
+  flex-direction: column;
 }
 
 .site header h1 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 header,
 footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header {
-    color: var(--color-bg-light);
+  color: var(--color-bg-light);
 }
 
 footer {
-    margin: var(--spacing-sm);
+  margin: var(--spacing-sm);
 }
 
 footer img {
-    height: 80px;
-    width: auto;
-    display: block;
-    margin: var(--spacing-sm);
+  height: 80px;
+  width: auto;
+  display: block;
+  margin: var(--spacing-sm);
 }
 
 /* ====================================================================================================
-    4. Komponenten
+    4. UI-Komponenten
+    Gestaltung der interaktiven Elemente, Karten-Container und Formularbereiche.
 ====================================================================================================*/
 
-/* Logo */
+/* Animierter Logo-Banner oben links */
 .logo-container {
-    position: absolute;
-    top: var(--spacing-md);
-    left: var(--spacing-md);
-    width: 13%;
-    z-index: 100;
-    cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: var(--spacing-md);
+  width: 13%;
+  z-index: 100;
+  cursor: pointer;
 }
 
 .logo-container img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
 }
 
+/* Klassischer Blink-Effekt für den Web 1.0 Titel-Vibe */
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
 
-/* Title */
 #site-header {
-    font-family: 'Arial Black', sans-serif;
-    text-shadow: var(--spacing-sm) var(--spacing-sm) #000;
-    letter-spacing: var(--spacing-sm);
-    text-transform: uppercase;
-    font-weight: bold;
-    animation: blink 0.5s step-start infinite;
-    margin: var(--spacing-md);
+  font-family: "Arial Black", sans-serif;
+  text-shadow: var(--spacing-sm) var(--spacing-sm) #000;
+  letter-spacing: var(--spacing-sm);
+  text-transform: uppercase;
+  font-weight: bold;
+  animation: blink 0.5s step-start infinite;
+  margin: var(--spacing-md);
 }
 
-/* Bubbles & Header */
-
-.section-header {
-    color: var(--color-bg-light);
-    background-color: var(--color-tertiary);
-    border-radius: var(--radius-main);
-    margin: var(--spacing-sm);
-    padding: var(--spacing-md);
-}
-
+/* Struktur-Bubbles für Einführungstexte und Bereichsüberschriften */
+.section-header,
 .top-bubble {
-    color: var(--color-bg-light);
-    background-color: var(--color-tertiary);
-    border-radius: var(--radius-main);
-    margin: var(--spacing-sm);
-    padding: var(--spacing-md);
+  color: var(--color-bg-light);
+  background-color: var(--color-tertiary);
+  border-radius: var(--radius-main);
+  margin: var(--spacing-sm);
+  padding: var(--spacing-md);
 }
 
 .top-bubble p {
-    color: var(--color-bg-light);
+  color: var(--color-bg-light);
 }
 
+/* Grid-Layout für die flexiblen Pflanzenkarten */
 #plant-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Einzelne Pflanzenkarte */
 .plant-item {
-    background-color: var(--color-tertiary);
-    color: var(--color-bg-light);
-    border-radius: var(--radius-main);
-    margin: var(--spacing-sm);
-    padding-bottom: var(--spacing-md);
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
-    justify-content: center;
-    align-items: baseline;
-    min-width: 250px;
-    max-width: 300px;
-    height: 280px;
-    flex: 1 1 250px;
+  background-color: var(--color-tertiary);
+  color: var(--color-bg-light);
+  border-radius: var(--radius-main);
+  margin: var(--spacing-sm);
+  padding-bottom: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+  justify-content: center;
+  align-items: baseline;
+  min-width: 250px;
+  max-width: 300px;
+  height: 280px;
+  flex: 1 1 250px;
 }
 
 .plant-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 230px;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 230px;
 }
 
 .plant-info {
-    flex: 1;
+  flex: 1;
 }
 
+/* Bildbereich innerhalb einer Pflanzenkarte */
 .plant-picture {
-    width: 120px;
-    height: 200px;
-    margin: 0;
-    overflow: hidden;
-    border-radius: var(--radius-main);
+  width: 120px;
+  height: 200px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-main);
 }
 
-.plant-picture img{
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+.plant-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
+/* Formularbereich für die Registrierung neuer Sensoren */
 .newPlant {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-tertiary);
+  color: var(--color-bg-light);
+  border-radius: var(--radius-main);
+  margin: var(--spacing-sm);
+  padding: var(--spacing-md);
+}
 
-    background-color: var(--color-tertiary);
-    color: var(--color-bg-light);
-    border-radius: var(--radius-main);
-    margin: var(--spacing-sm);
-    padding: var(--spacing-md);
+/* ====================================================================================================
+    5. Dynamische Alarm-Klassen
+    Diese Selektoren werden via JavaScript (ui.js) zugewiesen, sobald Grenzwerte unterschritten werden.
+====================================================================================================*/
 
+.plant-item.alert-threshold {
+  background-color: rgb(255, 60, 60) !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+.plant-item.alert-threshold .section-header,
+.plant-item.alert-threshold h4,
+.plant-item.alert-threshold h5,
+.plant-item.alert-threshold p {
+  color: rgb(0, 0, 0) !important;
+  background-color: transparent !important;
+  text-shadow: none !important;
+}
+
+/* ====================================================================================================
+    6. Manueller Aktualisierungs-Button
+    Steuerungselemente für den asynchronen API-Datenabruf.
+====================================================================================================*/
+
+.refresh-button {
+  background-color: var(--color-tertiary);
+  color: var(--color-bg-light);
+  border: 2px solid var(--color-bg-light);
+  border-radius: var(--radius-main);
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.refresh-button:hover {
+  background-color: var(--color-bg-light);
+  color: var(--color-tertiary);
+  transform: scale(1.05);
+}
+
+.refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ====================================================================================================
+    7. Zusätzliche 90s-Retro-Vibe-Effekte
+    Spezifische Stildefinitionen für die Erzeugung der klassischen Web 1.0 / Windows 95 Ästhetik.
+====================================================================================================*/
+
+/* Newsticker (Lauftext) am oberen Bildschirmrand */
+.retro-ticker {
+  background-color: #000000;
+  color: #00ff00;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  padding: 4px 0;
+  border-bottom: 2px solid var(--color-bg-light);
+  font-size: 0.9rem;
+}
+
+/* Nostalgischer Besucherzähler im Footer */
+.hit-counter {
+  margin: 10px auto;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  color: var(--color-bg-light);
+}
+
+.counter-digits {
+  background-color: #000000;
+  color: #ff0000;
+  padding: 2px 6px;
+  border: 2px inset #555; /* Inset simuliert eine Vertiefung */
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-left: 5px;
+}
+
+/* Windows 95 Plastik-Schaltflächen (3D-Outset) */
+#btn,
+.refresh-button {
+  font-family: "Courier New", Courier, monospace !important;
+  font-weight: bold;
+  background-color: #c0c0c0 !important;
+  color: #000000 !important;
+  border: 3px outset #ffffff !important; /* Erzeugt den plastisch erhabenen 3D-Rand */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  padding: 6px 14px;
+}
+
+/* Optisches Hereindrücken der Buttons beim Mausklick */
+#btn:active,
+.refresh-button:active {
+  border: 3px inset #ffffff !important;
+  padding: 7px 13px 5px 15px;
+}
+
+/* Text- und Datei-Eingabefelder im Windows-Standard-Look */
+input[type="text"],
+input[type="file"] {
+  border: 3px inset #ffffff !important;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Alarm-Animation: Lässt Feuchtigkeitswerte bei kritischem Alarmzustand auffällig blinken */
+.plant-item.alert-threshold .plant-moist p {
+  animation: retro-blink 1s infinite;
+}
+
+@keyframes retro-blink {
+  0% {
+    opacity: 1;
+    color: #ff0000;
+  }
+  49% {
+    opacity: 1;
+    color: #ff0000;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }

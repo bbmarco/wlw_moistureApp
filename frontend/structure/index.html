@@ -1,166 +1,215 @@
-<!--
-    Author:  Basil Dick
-    Project: wlw-Projektarbeit Frühlingssemester 2026
-    Date:    2026-05-05
-    Version: 1.0.0
--->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Basil Dick">
-    <meta name="description" content="wlw-Projektarbeit Frühlingssemester 2026">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Basil Dick" />
+    <meta
+      name="description"
+      content="wlw-Projektarbeit Frühlingssemester 2026"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Moist Soil Society</title>
+
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link rel="icon" type="image/png" href="../images/TMSS.png" />
     <script type="module" src="../function/main.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <marquee class="retro-ticker" scrollamount="6">
+      +++ WELCOME TO THE MOIST SOIL SOCIETY INTERNET HOME +++++ ACHTUNG:
+      SENSOREN LAUFEN IM ECHTZEITMODUS +++ GIESST EURE PFLANZEN! +++
+    </marquee>
+
     <div class="logo-container">
-        <a href="index.html" style="text-decoration: none">
-            <img src="../images/TMSSRotate2.gif" alt="Logo" />
-        </a>
+      <a href="index.html" style="text-decoration: none">
+        <img
+          src="../images/TMSSRotate2.gif"
+          alt="The Moist Soil Society Logo"
+        />
+      </a>
     </div>
+
     <div class="site">
-        <header>
-            <h1 id="site-header">
-                <a href="index.html" style="color: inherit"> |--> The Moist Soil Society <--| </a>
-            </h1>
-            <br />
-            <nav>
-                <a href="index.html" style="color: inherit">|Home|</a>
-                <a href="about.html" style="color: inherit">|Über|</a>
-                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
-            </nav>
+      <header>
+        <h1 id="site-header">
+          <a href="index.html" style="color: inherit">
+            |--> The Moist Soil Society <--|
+          </a>
+        </h1>
+        <br />
+        <nav>
+          <a href="index.html" style="color: inherit">|Home|</a>
+          <a href="about.html" style="color: inherit">|Über|</a>
+          <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+        </nav>
+      </header>
+
+      <main>
+        <header class="section-header">
+          <h3>Einführung</h3>
+        </header>
+        <section class="top-bubble">
+          <p>
+            Willkommen im Dashboard von 'The Moist Soil Society'. Diese
+            Applikation dient der Echtzeit-Überwachung der Bodenfeuchtigkeit
+            deiner Zimmerpflanzen. Die Daten werden im Intervall direkt vom
+            Server abgefragt. Sollte der gemessene Wert den von dir definierten
+            Grenzwert unterschreiten, wechselt die jeweilige Pflanzenkarte in
+            den Alarmzustand (Rot). Neue Sensoren können unten im Formular
+            dynamisch hinzugefügt werden.
+          </p>
+        </section>
+
+        <header
+          class="section-header"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <h3>Planzenübersicht:</h3>
+          <button id="btn-refresh" class="refresh-button">
+            🔄 Aktualisieren
+          </button>
         </header>
 
-        <main>
+        <section id="plant-container">
+          <div class="plant-item" data-sensor-id="sensor_1" data-border="20">
             <header class="section-header">
-                <h3>Einführung</h3>
+              <h4>Pflanze 1</h4>
             </header>
-            <section class="top-bubble">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.
-                </p>
-            </section>
-
-            <header class="section-header">
-                <h3>Planzenübersicht:</h3>
-            </header>
-
-            <section id="plant-container">
-                <div class="plant-item">
-                    <header class="section-header">
-                        <h4>Pflanze 1</h4>
-                    </header>
-                    <div class="plant-content">
-                        <div class="plant-info">
-                            <div class="plant-moist">
-                                <h5>Feuchtigkeit:</h5>
-                                <p>53%</p>
-                            </div>
-                            <br />
-                            <div class="plant-border">
-                                <h5>Grenzwert:</h5>
-                                <p>20%</p>
-                            </div>
-                            <br />
-                            <div class="plant-water">
-                                <h5>Giessmenge:</h5>
-                                <p>500ml</p>
-                            </div>
-                            <br />
-                            <div class="plant-interval">
-                                <h5>Intervall:</h5>
-                                <p>5T</p>
-                            </div>
-                        </div>
-                        <figure class="plant-picture">
-                            <img src="../images/pflanze1.png" alt="Abbildung Pflanze1" />
-                        </figure>
-                    </div>
+            <div class="plant-content">
+              <div class="plant-info">
+                <div class="plant-sensor">
+                  <h5>Sensor ID:</h5>
+                  <p>sensor_1</p>
                 </div>
-
-                <div class="plant-item">
-                    <header class="section-header">
-                        <h4>Pflanze 2</h4>
-                    </header>
-                    <div class="plant-content">
-                        <div class="plant-info">
-                            <div class="plant-moist">
-                                <h5>Feuchtigkeit:</h5>
-                                <p>40%</p>
-                            </div>
-                            <br />
-                            <div class="plant-border">
-                                <h5>Grenzwert:</h5>
-                                <p>30%</p>
-                            </div>
-                            <br />
-                            <div class="plant-water">
-                                <h5>Giessmenge:</h5>
-                                <p>200ml</p>
-                            </div>
-                            <br />
-                            <div class="plant-interval">
-                                <h5>Intervall:</h5>
-                                <p>3T</p>
-                            </div>
-                        </div>
-                        <figure class="plant-picture">
-                            <img src="../images/pflanze2.png" alt="Abbildung pflanze2" />
-                        </figure>
-                    </div>
+                <br />
+                <div class="plant-moist">
+                  <h5>Feuchtigkeit:</h5>
+                  <p>Lade...</p>
                 </div>
-            </section>
+                <br />
+                <div class="plant-border">
+                  <h5>Grenzwert:</h5>
+                  <p>20%</p>
+                </div>
+                <br />
+                <div class="plant-water">
+                  <h5>Giessmenge:</h5>
+                  <p>500ml</p>
+                </div>
+                <br />
+                <div class="plant-interval">
+                  <h5>Intervall:</h5>
+                  <p>5T</p>
+                </div>
+              </div>
+              <figure class="plant-picture">
+                <img src="../images/pflanze1.png" alt="Abbildung Pflanzen1" />
+              </figure>
+            </div>
+          </div>
 
+          <div class="plant-item" data-sensor-id="sensor_2" data-border="30">
             <header class="section-header">
-                <h3>Neuer Eintrag Erstellen:</h3>
+              <h4>Pflanze 2</h4>
             </header>
-
-            <section class="newPlant">
-                <p>Pflanzenname</p>
-                <input type="text" id="plant-name" />
+            <div class="plant-content">
+              <div class="plant-info">
+                <div class="plant-sensor">
+                  <h5>Sensor ID:</h5>
+                  <p>sensor_2</p>
+                </div>
                 <br />
-
-                <p>Feuchtigkeits-Grenzwert:</p>
-                <input type="text" id="plant-border" />
+                <div class="plant-moist">
+                  <h5>Feuchtigkeit:</h5>
+                  <p>Lade...</p>
+                </div>
                 <br />
-
-                <p>Giessmenge:</p>
-                <input type="text" id="plant-water" />
+                <div class="plant-border">
+                  <h5>Grenzwert:</h5>
+                  <p>30%</p>
+                </div>
                 <br />
-
-                <p>Giess-Intervall:</p>
-                <input type="text" id="plant-interval" />
+                <div class="plant-water">
+                  <h5>Giessmenge:</h5>
+                  <p>200ml</p>
+                </div>
                 <br />
+                <div class="plant-interval">
+                  <h5>Intervall:</h5>
+                  <p>3T</p>
+                </div>
+              </div>
+              <figure class="plant-picture">
+                <img src="../images/pflanze2.png" alt="Abbildung pflanze2" />
+              </figure>
+            </div>
+          </div>
+        </section>
 
-                <p>Pflanzenbild auswählen:</p>
-                <input type="file" id="plant-image" accept="image/*" />
-                <br />
+        <header class="section-header">
+          <h3>Neuer Eintrag Erstellen:</h3>
+        </header>
 
-                <button id="btn">Neuer Eintrag</button>
-            </section>
+        <section class="newPlant">
+          <p>Pflanzenname</p>
+          <input type="text" id="plant-name" placeholder="z.B. Yucca-Palme" />
+          <br />
 
-        </main>
+          <p>Sensor ID (z.B. sensor_1):</p>
+          <input
+            type="text"
+            id="plant-sensor-id"
+            placeholder="Exakte ID aus der Hardware"
+          />
+          <br />
 
+          <p>Feuchtigkeits-Grenzwert (%):</p>
+          <input type="text" id="plant-border" placeholder="z.B. 35" />
+          <br />
 
-        <footer>
-            <small>&copy; The Moist Soil Society</small>
-            <img src="../images/waschbär-removebg-preview.png" alt="Waschbär" />
-            <nav>
-                <a href="index.html" style="color: inherit">|Home|</a>
-                <a href="about.html" style="color: inherit">|Über|</a>
-                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
-            </nav>
-        </footer>
+          <p>Giessmenge:</p>
+          <input type="text" id="plant-water" placeholder="z.B. 200ml" />
+          <br />
+
+          <p>Giess-Intervall:</p>
+          <input type="text" id="plant-interval" placeholder="z.B. 7 Tage" />
+          <br />
+
+          <p>Pflanzenbild auswählen:</p>
+          <input type="file" id="plant-image" accept="image/*" />
+          <br />
+
+          <button id="btn">Neuer Eintrag</button>
+        </section>
+      </main>
+
+      <footer>
+        <div class="hit-counter">
+          <span>YOU ARE VISITOR NUMBER:</span>
+          <span class="counter-digits">004219</span>
+        </div>
+        <br />
+        <small>&copy; The Moist Soil Society</small>
+        <img
+          src="../images/waschbär-removebg-preview.png"
+          alt="Waschbär Maskottchen"
+        />
+
+        <p style="font-size: 0.7rem; margin-top: 5px; color: #888">
+          Optimiert für Netscape Navigator 4.0 und eine Auflösung von 800x600
+        </p>
+        <br />
+        <nav>
+          <a href="index.html" style="color: inherit">|Home|</a>
+          <a href="about.html" style="color: inherit">|Über|</a>
+          <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+        </nav>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>

@@ -1,69 +1,76 @@
-<!--
-    Author:  Basil Dick
-    Project: wlw-Projektarbeit Frühlingssemester 2026
-    Date:    2026-05-05
-    Version: 1.0.0
--->
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Basil Dick">
-    <meta name="description" content="wlw-Projektarbeit Frühlingssemester 2026">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Moist Soil Society</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Basil Dick" />
+    <meta
+      name="description"
+      content="wlw-Projektarbeit Frühlingssemester 2026"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Moist Soil Society - Über uns</title>
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <link rel="icon" type="image/png" href="../images/TMSS.png" />
     <script src="../main.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="logo-container">
-        <a href="index.html" style="text-decoration: none">
-            <img src="../images/TMSSRotate2.gif" alt="Logo" />
-            <!-- alt steht für alternativer Text und ist sehr wichtig für:
-            Barrierefreiheit, als Fallback und Suchmaschinenoptimierung -->
-        </a>
+      <a href="index.html" style="text-decoration: none">
+        <img
+          src="../images/TMSSRotate2.gif"
+          alt="The Moist Soil Society Logo"
+        />
+      </a>
     </div>
+
     <div class="site">
-        <header>
-            <h1 id="site-header">
-                <a href="index.html" style="color: inherit">|--> The Moist Soil Society <--|< /a>
-            </h1>
-            <br />
-            <nav>
-                <a href="index.html" style="color: inherit">|Home|</a>
-                <a href="about.html" style="color: inherit">|Über|</a>
-                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
-            </nav>
+      <header>
+        <h1 id="site-header">
+          <a href="index.html" style="color: inherit"
+            >|--> The Moist Soil Society <--|</a
+          >
+        </h1>
+        <br />
+        <nav>
+          <a href="index.html" style="color: inherit">|Home|</a>
+          <a href="about.html" style="color: inherit">|Über|</a>
+          <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+        </nav>
+      </header>
+
+      <main>
+        <header class="section-header">
+          <h3>Über unsere Projektarbeit</h3>
         </header>
 
-        <main>
-            <header class="section-header">
-                <h3>Über unsere Projektarbeit</h3>
-            </header>
-            <section class="top-bubble">
-                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                    sit amet.
-                </p>
-            </section>
-        </main>
+        <section class="top-bubble">
+          <h4>Das IoT-Projekt im Fokus</h4>
+          <p style="line-height: 1.5; margin-top: 10px">
+            Diese Webapplikation bildet die Client-Schnittstelle für ein
+            automatisiertes IoT-Bodenfeuchtigkeits-Monitoring. Die Anwendung
+            ermöglicht es, Zimmerpflanzen dynamisch im Dashboard zu registrieren
+            und mit der individuellen Hardware-ID eines Sensors auf dem
+            Raspberry Pi zu verknüpfen. Das System fragt die Feuchtigkeitswerte
+            in Echtzeit ab und gleicht sie mit definierten Grenzwerten ab. Fällt
+            ein Wert unter das kritische Limit, wird visuell Alarm ausgelöst, um
+            eine bedarfsgerechte Bewässerung zu garantieren.
+          </p>
+        </section>
+      </main>
 
-
-        <footer>
-            <small>&copy; The Moist Soil Society</small>
-            <img src="../images/waschbär-removebg-preview.png" alt="Waschbär" />
-            <nav>
-                <a href="index.html" style="color: inherit">|Home|</a>
-                <a href="about.html" style="color: inherit">|Über|</a>
-                <a href="instruction.html" style="color: inherit">|Anleitung|</a>
-            </nav>
-        </footer>
+      <footer>
+        <small>&copy; The Moist Soil Society</small>
+        <img
+          src="../images/waschbär-removebg-preview.png"
+          alt="Waschbär Maskottchen"
+        />
+        <nav>
+          <a href="index.html" style="color: inherit">|Home|</a>
+          <a href="about.html" style="color: inherit">|Über|</a>
+          <a href="instruction.html" style="color: inherit">|Anleitung|</a>
+        </nav>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
