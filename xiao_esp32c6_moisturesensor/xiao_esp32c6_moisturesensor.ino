@@ -2,8 +2,8 @@
 #include <HTTPClient.h>
 
 // WLAN Zugangsdaten
-const char* ssid = "DEIN_WLAN_NAME";
-const char* password = "DEIN_PASSWORT";
+const char* ssid = "WLAN_NAME";
+const char* password = "PASSWORT";
 
 // Server Konfiguration
 const char* piUrl    = "http://192.168.0.52:3000/update-sensor";
