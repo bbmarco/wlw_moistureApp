@@ -462,3 +462,19 @@ input[type="file"] {
     opacity: 0;
   }
 }
+
+/* ====================================================================================================
+    8. Formular-Feintuning (.newPlant)
+====================================================================================================*/
+
+/* Nutzt die vorhandenen Umbrüche als Abstandshalter, ohne das Layout zu verbiegen */
+.newPlant br {
+  display: block;
+  margin-top: 15px; /* Hier kannst du den Zeilenabstand perfekt einstellen */
+  content: "";
+}
+
+/* Gibt den Eingabefeldern nur minimalen Innenabstand für bessere Lesbarkeit */
+.newPlant input {
+  padding: 3px;
+}
