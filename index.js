@@ -20,10 +20,13 @@ if (!fs.existsSync(DATA_DIR)) {
 }
 
 app.use(cors());
-app.use(express.json());
+
 
 // Statische Dateien direkt aus dem frontend-Ordner bereitstellen
 app.use(express.static(path.join(__dirname, 'frontend')));
+
+// NEU: Ermöglicht den direkten Zugriff auf about.html und instruction.html
+app.use(express.static(path.join(__dirname, 'frontend', 'structure')));
 
 // Die index.html aus dem richtigen Unterordner ausliefern
 app.get('/', (req, res) => {
