@@ -13,11 +13,19 @@ Die Applikation basiert auf einer klassischen Client-Server-Architektur, die fü
 3. Datenbereitstellung: Der Browser (Client) ruft die Daten periodisch via HTTP-GET ab und baut das Dashboard dynamisch auf. Individuelle Einstellungen (Namen, Schwellenwerte, Bilder) werden persistent im lokalen Speicher des Browsers (LocalStorage) gesichert.
 
 ### Systemarchitektur
-[ Mikrocontroller ] --- HTTP POST (Daten) ---> [ Node.js Server (Raspberry Pi) ]
-                                                        | (Speicherung als .json)
-                                                        v
-[ Webbrowser (Client) ] <-- HTTP GET (API) <--- [ JSON-Dateisystem ]
-
+```text
++-----------------------+                    +-------------------------------+
+|    Mikrocontroller    | -- HTTP POST ----> |  Node.js Server (Raspberry Pi)|
+|   (z.B. XIAO ESP32)   |                    |        [ Express-API ]        |
++-----------------------+                    +-------------------------------+
+                                                             |
+                                                    Speichert Daten als .json
+                                                             v
++-----------------------+                    +-------------------------------+
+|  Webbrowser (Client)  | <-- HTTP GET ----- |       JSON-Dateisystem        |
+|  [ Retro-Dashboard ]  |      (API)         |        (sensor_data/)         |
++-----------------------+                    +-------------------------------+
+```
 ---
 
 ## 3. Serverseitige API-Endpunkte (server)
